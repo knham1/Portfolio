@@ -4,9 +4,8 @@ const experience = [
     company: "TechnipFMC",
     dates: "Oct 2025 – Apr 2026",
     highlights: [
-      "Designed and executed detailed test plans and cases, ensuring coverage of business and system requirements, which reduced post-release defect rates by 30%.",
-      "Identified critical bugs pre-deployment, significantly enhancing software stability and user satisfaction.",
-      "Maintained robust test environments and automation tools, ensuring smooth and reliable test executions.",
+      "Reduced post-release defect rates by 30% by designing and executing detailed test plans and cases based on business and system requirements, validating software functionality.",
+      "Supported reliable test execution and software integration activities by maintaining test environments and automation tools, ensuring consistency across releases.",
     ],
   },
   {
@@ -14,9 +13,8 @@ const experience = [
     company: "TechnipFMC",
     dates: "Jul 2024 – Oct 2025",
     highlights: [
-      "Led Product Acceptance Testing (PAT) and Extended Factory Acceptance Testing (EFAT) activities, validating system functionality, software performance, and operational requirements.",
-      "Diagnosed and resolved software, hardware, and system integration issues during test environment setup.",
-      "Troubleshot real-time system failures and implemented corrective actions to maintain operational continuity.",
+      "Resolved software, hardware, and system integration issues by diagnosing problems during test environment setup through structured debugging and root cause analysis.",
+      "Enabled standardized real-time data exchange between subsea MCS and topside DCS by configuring and validating OPC UA server tag points in accordance with the MDIS information model.",
     ],
   },
   {
@@ -24,9 +22,8 @@ const experience = [
     company: "TechnipFMC",
     dates: "Jun 2023 – Jul 2024",
     highlights: [
-      "Designed, implemented, and maintained CI/CD pipelines using Azure DevOps, GitHub Actions, and Jenkins, automating build, testing, and deployment workflows, decreasing software delivery times by 300% (from 6 hours to 2 hours).",
-      "Delivered expert-level support, consistently resolving high-priority issues on first contact and reducing ticket volume by 30%.",
-      "Investigated and resolved build, deployment, and environment-related issues through log analysis, root-cause investigation, and system debugging, minimizing disruptions to development workflows and release schedules.",
+      "Decreased software delivery times by 67% (from 6 hours to 2 hours) by designing, implementing, and maintaining CI/CD pipelines using Azure DevOps, GitHub Actions, and Jenkins.",
+      "Minimized disruptions to development workflows and release schedules by investigating and resolving build, deployment, and environment-related issues through log analysis and root-cause investigation.",
     ],
   },
   {
@@ -34,10 +31,9 @@ const experience = [
     company: "TechnipFMC",
     dates: "Aug 2017 – Jun 2023",
     highlights: [
-      "Designed and developed a system management interface from initiation to completion using Angular, TypeScript, JavaScript, PHP, HTML5, and REST APIs, reducing human errors and speeding up configuration times by 300%.",
-      "Collaborated with product managers, QA engineers, and software developers throughout the Agile software development lifecycle, improving project delivery times by 25%.",
-      "Built interactive prototypes and proof-of-concepts to validate product features with stakeholders, shortening feature validation timelines by 30% and improving development alignment.",
-      "Authored technical documentation, improving knowledge sharing and project alignment for engineering teams, business stakeholders, and end users.",
+      "Reduced human errors and sped up configuration times by 20% by designing and developing a system management interface using Angular, TypeScript, JavaScript, PHP, HTML5, and REST APIs.",
+      "Improved project delivery times by 25% by collaborating with product managers, QA engineers, and developers throughout the Agile software development lifecycle, contributing to requirements gathering, feature implementation, and testing.",
+      "Shortened feature validation timelines by 30% and improved development alignment by building interactive prototypes and proof-of-concepts to validate product features with stakeholders.",
     ],
   },
 ];
@@ -52,9 +48,20 @@ const skills = [
   "CSS3",
   "C++",
   "Angular",
+  "React Native",
+  "Expo",
+  "NativeWind",
   "Node.js",
   "Express",
   "Bootstrap",
+  "PostgreSQL",
+  "Supabase",
+  "REST APIs",
+  "Anthropic Claude API",
+  "ChatGPT",
+  "Claude Code",
+  "Cursor",
+  "Prompt Engineering",
   "Azure DevOps",
   "GitHub Actions",
   "Jenkins",
@@ -62,26 +69,41 @@ const skills = [
   "Git",
   "Bitbucket",
   "Jira",
-  "REST APIs",
+  "Confluence",
+  "Agile",
+  "CI/CD",
+  "Log Analysis",
+  "Root Cause Analysis",
+  "System Debugging",
 ];
 
 const characteristics = [
   {
     title: "Full Software Lifecycle Experience",
     blurb:
-      "From building full-stack features to CI/CD pipelines to QA and systems validation, I've worked every stage of the software lifecycle — so I understand how my code impacts the teams downstream.",
+      "I've worked the full software development lifecycle. Requirements, design, development, testing, debugging, deployment, and CI/CD automation across full-stack, QA, system integration, and DevOps in Agile environments.",
   },
   {
     title: "Results You Can Measure",
     blurb:
-      "I focus on outcomes, not just output — cutting release cycles from 6 hours to 2, reducing defect rates by 30%, and speeding up delivery timelines by up to 300% across past roles.",
+      "I focus on outcomes, not just output. Cutting delivery times by67% (6 hours to 2), reducing post-release defects by 30%, speeding configuration by 20%, and shortening feature validation by 30%.",
   },
   {
     title: "Cross-Functional Collaborator",
     blurb:
-      "I've worked closely with product managers, QA engineers, and stakeholders through Agile development, translating requirements into shipped features and clear technical documentation.",
+      "I've worked closely with product managers, QA engineers, and developers through Agile development, gathering requirements, implementing features, and testing to improve project delivery times by 25%.",
   },
 ];
+
+const project = {
+  dates: "Apr 2026 – Present",
+  highlights: [
+    "Built HypeMe, a cross-platform mobile app where users log daily wins and get AI coaching (Anthropic Claude API) that connects each win to their personal goals, in a tone they choose.",
+    "Designed a React Native (Expo) and Supabase stack with Postgres row-level security and sent all AI calls through an authenticated server-side function that checks record ownership and keeps API keys off the client.",
+    "Used Claude Code as an AI pair programmer: set the architecture, directed feature work, and reviewed every change before committing.",
+  ],
+  tech: ["React Native", "Expo", "Supabase", "Anthropic API", "PostgreSQL"],
+};
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -114,19 +136,28 @@ export default function Home() {
       <main id="top" className="flex-1">
         {/* Hero */}
         <section className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 py-24 text-center sm:py-32">
-          <div className="fade-up flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-4xl font-bold text-background sm:h-32 sm:w-32">
+          {/* <div className="fade-up flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-4xl font-bold text-background sm:h-32 sm:w-32">
             KN
-          </div>
+          </div> */}
+
+          <img
+            src="/images/Headshot.jpg"
+            alt="Kenny Nham"
+            width={128}
+            height={128}
+            className="fade-up h-28 w-28 rounded-full object-cover sm:h-32 sm:w-32"
+          />
+          
           <h1 className="fade-up-delay-1 text-4xl font-bold tracking-tight sm:text-6xl">
             Hi, I&apos;m <span className="gradient-text">Kenny Nham</span>
           </h1>
-          <p className="fade-up-delay-2 max-w-xl text-lg text-muted">
-            Software Engineer who builds fast,
-            reliable products and loves solving hard problems.
+          <p className="fade-up-delay-2 max-w-2xl text-lg text-muted">
+            Software Engineer with 8+ years across full-stack development,
+            quality assurance, system integration, and DevOps.
           </p>
           <div className="fade-up-delay-2 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="/resume.pdf"
+              href="/documents/resume.pdf"
               download="Kenny Nham Resume - Software Engineer.pdf"
               className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
             >
@@ -147,10 +178,10 @@ export default function Home() {
             About
           </h2>
           <p className="max-w-5xl text-lg leading-relaxed text-muted">
-            Full-stack software engineer with hands-on experience deploying and troubleshooting production systems directly on customer sites. 
-            Regularly traveled on-site to lead Product Acceptance Testing (PAT) and Extended Factory Acceptance Testing (EFAT), serving as the primary 
-            technical point of contact between engineering and the client during live PLC/SCADA system commissioning. Combines full-stack development, 
-            CI/CD, and SQL-driven data validation with real-time, client-facing problem-solving under ambiguous, high-stakes conditions.
+            Accomplished Software Engineer with 8+ years of experience across full-stack development, quality assurance, system
+            integration, and DevOps. Built and supported web-based system management interfaces. Experienced throughout the software
+            development lifecycle, including requirements, design, development, testing, debugging, deployment, and CI/CD automation
+            within Agile environments. Bachelor of Computer Science, California State University, Fullerton (2017).
           </p>
         </section>
 
@@ -212,18 +243,26 @@ export default function Home() {
         </section>
 
         {/* Featured Project */}
-        {/* <section id="project" className="mx-auto max-w-5xl px-6 py-20">
+        <section id="project" className="mx-auto max-w-5xl px-6 py-20">
           <h2 className="mb-10 text-sm font-semibold uppercase tracking-widest text-accent-2">
             Featured Project
           </h2>
-          <div className="rounded-2xl border border-white/10 bg-surface p-6 sm:p-8">
-            <h3 className="text-2xl font-semibold">[Project Name]</h3>
+          <div className="rounded-2xl border border-white/10 bg-surface p-6 transition-colors hover:border-accent/40 sm:p-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 className="text-2xl font-semibold">HypeMe</h3>
+              <span className="text-sm text-muted">{project.dates}</span>
+            </div>
             <p className="mt-3 max-w-2xl text-muted">
-              [Placeholder description of the project — what it does, what problem it
-              solves, and what makes it worth featuring.]
+              A cross-platform mobile app where users log daily wins and get AI coaching
+              that connects each win to their personal goals, in a tone they choose.
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {["[Tech]", "[Tech]", "[Tech]"].map((tag) => (
+            <ul className="mt-4 max-w-3xl list-disc space-y-2 pl-5 text-muted">
+              {project.highlights.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {project.tech.map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full bg-background px-3 py-1 text-xs text-muted"
@@ -232,22 +271,24 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <a
-                href="https://github.com/[your-username]/[repo]"
+                href="/hypeme"
                 className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105"
+              >
+                Try the Live Demo
+              </a>
+              <a
+                href="https://github.com/knham1/HypeMe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold transition-colors hover:border-white/40"
               >
                 View on GitHub
               </a>
-              <a
-                href="#"
-                className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold transition-colors hover:border-white/40"
-              >
-                Live Demo
-              </a>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* Contact */}
         <section id="contact" className="mx-auto max-w-5xl px-6 py-24 text-center">
@@ -259,19 +300,23 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:[knham3@gmail.com]"
+              href="mailto:knham3@gmail.com"
               className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
             >
               Email Me
             </a>
             <a
-              href="https://linkedin.com/in/[kennynham]"
+              href="https://www.linkedin.com/in/kennynham/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold transition-colors hover:border-white/40"
             >
               LinkedIn
             </a>
             <a
-              href="https://github.com/[your-username]"
+              href="https://github.com/knham1"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold transition-colors hover:border-white/40"
             >
               GitHub

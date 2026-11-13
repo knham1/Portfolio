@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Prebuilt HypeMe web export (minified Expo bundle).
+    "public/hypeme/**",
   ]),
 ]);
 

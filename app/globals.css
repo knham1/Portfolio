@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Don't scan prebuilt bundles for class names (HypeMe's minified Expo export). */
+@source not "../public/hypeme";
 
 :root {
   --background: #0b0b12;

@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Kenny Nham — Software Engineer",
-  description: "Portfolio site for Kenny Nham, Software Engineer.",
+  description:
+    "Software Engineer with 8+ years across full-stack development, quality assurance, system integration, and DevOps.",
 };
 
 export default function RootLayout({
