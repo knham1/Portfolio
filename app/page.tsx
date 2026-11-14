@@ -1,3 +1,21 @@
+const characteristics = [
+  {
+    title: "Full Software Lifecycle Experience",
+    blurb:
+      "I've worked the full software development lifecycle. Requirements, design, development, testing, debugging, deployment, and CI/CD automation across full-stack, QA, system integration, and DevOps in Agile environments.",
+  },
+  {
+    title: "Results You Can Measure",
+    blurb:
+      "I focus on outcomes, not just output. Cutting delivery times by67% (6 hours to 2), reducing post-release defects by 30%, speeding configuration by 20%, and shortening feature validation by 30%.",
+  },
+  {
+    title: "Cross-Functional Collaborator",
+    blurb:
+      "I've worked closely with product managers, QA engineers, and developers through Agile development, gathering requirements, implementing features, and testing to improve project delivery times by 25%.",
+  },
+];
+
 const experience = [
   {
     role: "Software Quality Assurance Engineer",
@@ -38,62 +56,41 @@ const experience = [
   },
 ];
 
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "PHP",
-  "Python",
-  "SQL",
-  "HTML5",
-  "CSS3",
-  "C++",
-  "Angular",
-  "React Native",
-  "Expo",
-  "NativeWind",
-  "Node.js",
-  "Express",
-  "Bootstrap",
-  "PostgreSQL",
-  "Supabase",
-  "REST APIs",
-  "Anthropic Claude API",
-  "ChatGPT",
-  "Claude Code",
-  "Cursor",
-  "Prompt Engineering",
-  "Azure DevOps",
-  "GitHub Actions",
-  "Jenkins",
-  "Microsoft TFS",
-  "Git",
-  "Bitbucket",
-  "Jira",
-  "Confluence",
-  "Agile",
-  "CI/CD",
-  "Log Analysis",
-  "Root Cause Analysis",
-  "System Debugging",
+const skillGroups = [
+  {
+    category: "Languages",
+    items: ["C++", "CSS3", "HTML5", "JavaScript", "PHP", "Python", "SQL", "TypeScript"],
+  },
+  {
+    category: "Frameworks & Libraries",
+    items: ["Angular", "Bootstrap", "Expo", "Express", "NativeWind", "Node.js", "React Native"],
+  },
+  {
+    category: "Databases & Backend",
+    items: ["PostgreSQL", "REST APIs", "Supabase"],
+  },
+  {
+    category: "AI & LLM",
+    items: ["Anthropic Claude API", "ChatGPT", "Claude Code", "Cursor", "Prompt Engineering"],
+  },
+  {
+    category: "Tools & DevOps",
+    items: ["Azure DevOps", "Bitbucket", "Confluence", "Git", "GitHub Actions", "Jenkins", "Jira", "Microsoft TFS"],
+  },
+  {
+    category: "Methodologies",
+    items: [
+      "Agile Development",
+      "CI/CD",
+      "Full Stack Web Application Development",
+      "Log Analysis",
+      "Root Cause Analysis",
+      "System Debugging",
+    ],
+  },
 ];
 
-const characteristics = [
-  {
-    title: "Full Software Lifecycle Experience",
-    blurb:
-      "I've worked the full software development lifecycle. Requirements, design, development, testing, debugging, deployment, and CI/CD automation across full-stack, QA, system integration, and DevOps in Agile environments.",
-  },
-  {
-    title: "Results You Can Measure",
-    blurb:
-      "I focus on outcomes, not just output. Cutting delivery times by67% (6 hours to 2), reducing post-release defects by 30%, speeding configuration by 20%, and shortening feature validation by 30%.",
-  },
-  {
-    title: "Cross-Functional Collaborator",
-    blurb:
-      "I've worked closely with product managers, QA engineers, and developers through Agile development, gathering requirements, implementing features, and testing to improve project delivery times by 25%.",
-  },
-];
+
 
 const project = {
   dates: "Apr 2026 – Present",
@@ -113,220 +110,512 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+const EMAIL = "knham3@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/kennynham/";
+const GITHUB = "https://github.com/knham1";
+const RESUME = "/documents/resume.pdf";
+const RESUME_NAME = "Kenny Nham Resume - Software Engineer.pdf";
+
+/* ---------- Small building blocks ---------- */
+
+type IconProps = { className?: string };
+
+function Svg({ className = "h-4 w-4", children }: IconProps & { children: React.ReactNode }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      {children}
+    </svg>
+  );
+}
+
+const ArrowIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </Svg>
+);
+const MailIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </Svg>
+);
+const LinkedInIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </Svg>
+);
+const GitHubIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </Svg>
+);
+const CodeIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <polyline points="16 18 22 12 16 6" />
+    <polyline points="8 6 2 12 8 18" />
+  </Svg>
+);
+const TrendIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+    <polyline points="16 7 22 7 22 13" />
+  </Svg>
+);
+const UsersIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </Svg>
+);
+
+const characteristicIcons = [CodeIcon, TrendIcon, UsersIcon];
+
+/** "KN" monogram mark used in the header and footer. */
+function Logo({ className = "h-10 w-10 text-base" }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-xl rounded-br-[1.25rem] bg-accent font-bold tracking-tight text-accent-ink ${className}`}
+    >
+      KN
+    </span>
+  );
+}
+
+/** Small "— Label" eyebrow above section titles. */
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mb-3 text-xs font-medium tracking-[0.2em] text-muted">
+      — {children}
+    </p>
+  );
+}
+
+/** Amber underlined text link with a trailing arrow. */
+function ArrowLink({
+  href,
+  children,
+  external,
+  download,
+}: {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+  download?: string;
+}) {
+  return (
+    <a
+      href={href}
+      download={download}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className="group inline-flex items-center gap-5 font-semibold text-accent"
+    >
+      <span className="underline decoration-accent/60 underline-offset-4 group-hover:decoration-accent">
+        {children}
+      </span>
+      <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+    </a>
+  );
+}
+
+/** Striped box standing in for a photo until real images are added. */
+function Placeholder({ label, className = "" }: { label: string; className?: string }) {
+  return (
+    <div
+      role="img"
+      aria-label={`${label} (placeholder)`}
+      className={`placeholder-stripes flex items-center justify-center ${className}`}
+    >
+      <span className="rounded-full bg-black/20 px-3 py-1 text-xs tracking-wide text-muted">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function SocialLinks() {
+  const links = [
+    { href: `mailto:${EMAIL}`, label: "Email", Icon: MailIcon },
+    { href: LINKEDIN, label: "LinkedIn", Icon: LinkedInIcon },
+    { href: GITHUB, label: "GitHub", Icon: GitHubIcon },
+  ];
+  return (
+    <ul className="flex items-center gap-5">
+      {links.map(({ href, label, Icon }) => (
+        <li key={label}>
+          <a
+            href={href}
+            aria-label={label}
+            {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="text-foreground/80 transition-colors hover:text-accent"
+          >
+            <Icon className="h-4 w-4" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/* ---------- Page ---------- */
+
 export default function Home() {
   return (
     <div className="flex min-h-full flex-col">
-      <header className="sticky top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur">
-        <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <a href="#top" className="font-semibold tracking-tight">
-            Kenny Nham
-          </a>
-          <ul className="hidden gap-6 text-sm text-muted sm:flex">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="transition-colors hover:text-foreground">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
-
       <main id="top" className="flex-1">
         {/* Hero */}
-        <section className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 py-24 text-center sm:py-32">
-          {/* <div className="fade-up flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-4xl font-bold text-background sm:h-32 sm:w-32">
-            KN
-          </div> */}
+        <section className="bg-hero">
+          <div className="mx-auto max-w-5xl px-6">
+            <nav className="flex items-center justify-between gap-6 py-8">
+              <a href="#top" aria-label="Kenny Nham, back to top">
+                <Logo />
+              </a>
+              <ul className="hidden gap-6 text-lg md:flex">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="group relative text-muted/70 transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                      <span className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent opacity-0 transition-opacity group-hover:opacity-100" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className="text-sm font-semibold text-accent md:hidden">
+                Contact
+              </a>
+            </nav>
 
-          <img
-            src="/images/Headshot.jpg"
-            alt="Kenny Nham"
-            width={128}
-            height={128}
-            className="fade-up h-28 w-28 rounded-full object-cover sm:h-32 sm:w-32"
-          />
-          
-          <h1 className="fade-up-delay-1 text-4xl font-bold tracking-tight sm:text-6xl">
-            Hi, I&apos;m <span className="gradient-text">Kenny Nham</span>
-          </h1>
-          <p className="fade-up-delay-2 max-w-2xl text-lg text-muted">
-            Software Engineer with 8+ years across full-stack development,
-            quality assurance, system integration, and DevOps.
-          </p>
-          <div className="fade-up-delay-2 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="/documents/resume.pdf"
-              download="Kenny Nham Resume - Software Engineer.pdf"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
-            >
-              View Resume
-            </a>
-            <a
-              href="#contact"
-              className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold transition-colors hover:border-white/40"
-            >
-              Contact Me
-            </a>
+            <div className="grid items-end gap-10 pt-6 md:grid-cols-12 md:gap-6 md:pt-10">
+              <div className="fade-up self-center md:col-span-4 md:pb-24">
+                <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+                  Kenny
+                  <br />
+                  Nham<span className="text-accent">.</span>
+                </h1>
+                <div className="mt-6 h-1 w-12 bg-accent" />
+                <div className="mt-10">
+                  <SocialLinks />
+                </div>
+              </div>
+
+              <div className="fade-up-delay-2 order-last md:order-none md:col-span-4">
+                {/* Swap for your photo, e.g. <Image src="/images/Headshot.jpg" ... /> */}
+                {/* <Placeholder label="Your photo" className="mx-auto aspect-[4/5] w-full max-w-xs md:max-w-none" /> */}
+                <img
+                  src="/images/Nature_Headshot.webp"
+                  alt="Kenny Nham"
+                  className="border-2 border-accent rounded-lg"
+                />
+              </div>
+
+              <div className="fade-up-delay-1 self-center md:col-span-4 md:pb-24">
+                <Eyebrow>Introduction</Eyebrow>
+                <p className="text-2xl font-medium leading-snug">
+                I've built the features, tested them, wired systems together, automated the releases, and deployed them.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
+                  <ArrowLink href={RESUME} download={RESUME_NAME}>
+                    View Resume
+                  </ArrowLink>
+                  <ArrowLink href="#contact">Contact Me</ArrowLink>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* About */}
-        <section id="about" className="mx-auto max-w-5xl px-6 py-20">
-          <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-accent-2">
-            About
-          </h2>
-          <p className="max-w-5xl text-lg leading-relaxed text-muted">
-            Accomplished Software Engineer with 8+ years of experience across full-stack development, quality assurance, system
-            integration, and DevOps. Built and supported web-based system management interfaces. Experienced throughout the software
-            development lifecycle, including requirements, design, development, testing, debugging, deployment, and CI/CD automation
-            within Agile environments. Bachelor of Computer Science, California State University, Fullerton (2017).
-          </p>
+        <section id="about" className="bg-band">
+          <div className="mx-auto grid max-w-5xl gap-12 px-6 pt-24 pb-16 md:grid-cols-12">
+            <div className="md:col-span-5">
+              <Eyebrow>About</Eyebrow>
+              <h2 className="text-2xl font-medium leading-snug">
+                Software Engineer,
+                <br />
+                8+ years in the field.
+              </h2>
+              {/* <div className="mt-10">
+                <ArrowLink href={`mailto:${EMAIL}`}>{EMAIL}</ArrowLink>
+              </div> */}
+            </div>
+            <div className="md:col-span-7">
+              <div className="space-y-4 leading-relaxed text-muted">
+                <p>
+                  I started my career as a full-stack engineer at TechnipFMC, building and supporting the
+                  web-based interface used to configure and manage subsea control systems.
+                </p>
+                <p>
+                  From there I moved into DevOps, automating how those same systems were built and deployed.
+                  I created CI/CD pipelines that kept builds healthy and releases stable.
+                </p>
+                <p>
+                  As a controls engineer, I worked closer to the hardware, making sure the control system
+                  communicated reliably with its sensors. That role took me to Singapore and Rio de Janeiro,
+                  Brazil, to help configure and test systems on site.
+                </p>
+                <p>
+                  Most recently, I moved into quality assurance on those projects, designing and running the
+                  tests that verified the software worked as intended.
+                </p>
+              </div>
+
+              {/* <p className="leading-relaxed text-muted">
+                Accomplished Software Engineer with 8+ years of experience across full-stack development, quality assurance, system
+                integration, and DevOps. Built and supported web-based system management interfaces and subsea control systems. Experienced throughout the software
+                development lifecycle, including requirements, design, development, testing, debugging, deployment, and CI/CD automation
+                within Agile environments.
+              </p> */}
+              {/* <p className="mt-4 text-xs leading-relaxed text-muted">
+                Bachelor of Computer Science, California State University, Fullerton (2017).
+              </p> */}
+              <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
+                <div className="flex items-center gap-4">
+                  <dt className="text-5xl font-medium text-accent">8+</dt>
+                  <dd className="text-sm font-semibold leading-tight">
+                    Years of
+                    <br />
+                    Experience.
+                  </dd>
+                </div>
+                <div className="flex items-center gap-4">
+                  <dt className="text-5xl font-medium text-accent"></dt>
+                  <dd className="text-sm font-semibold leading-tight">
+                    Faster
+                    <br />
+                    Delivery.
+                  </dd>
+                </div>
+                <div className="flex items-center gap-4">
+                  <dt className="text-5xl font-medium text-accent"></dt>
+                  <dd className="text-sm font-semibold leading-tight">
+                    Fewer
+                    <br />
+                    Defects.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        {/* Why hire me: cards straddle the band edge */}
+        <section
+          aria-label="Why hire me"
+          className="bg-[linear-gradient(to_bottom,var(--band)_50%,var(--background)_50%)]"
+        >
+          <div className="mx-auto grid max-w-5xl gap-6 px-6 md:grid-cols-3">
+            {characteristics.map((c, i) => {
+              const Icon = characteristicIcons[i];
+              const featured = i === 0;
+              return (
+                <div
+                  key={c.title}
+                  className={`p-8 transition-transform hover:-translate-y-1 ${
+                    featured ? "bg-accent text-accent-ink" : "bg-surface"
+                  }`}
+                >
+                  <Icon className="mb-6 h-6 w-6" />
+                  <h3 className="text-xl font-medium leading-snug">
+                    {c.title}
+                    <span className={featured ? "" : "text-accent"}>.</span>
+                  </h3>
+                  <p className={`mt-4 text-sm leading-relaxed ${featured ? "text-accent-ink/80" : "text-muted"}`}>
+                    {c.blurb}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </section>
 
         {/* Experience */}
-        <section id="experience" className="mx-auto max-w-5xl px-6 py-20">
-          <h2 className="mb-10 text-sm font-semibold uppercase tracking-widest text-accent-2">
-            Experience
-          </h2>
-          <div className="flex flex-col gap-8">
-            {experience.map((job) => (
-              <div
-                key={job.role + job.company}
-                className="rounded-2xl border border-white/10 bg-surface p-6 transition-colors hover:border-accent/40 sm:p-8"
-              >
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-xl font-semibold">
-                    {job.role} · {job.company}
-                  </h3>
-                  <span className="text-sm text-muted">{job.dates}</span>
-                </div>
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-muted">
-                  {job.highlights.map((h) => (
-                    <li key={h}>{h}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        <section id="experience" className="mx-auto grid max-w-5xl gap-12 px-6 py-28 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <Eyebrow>Experience</Eyebrow>
+            <h2 className="text-2xl font-medium leading-snug">
+              Where I've worked
+              <br />
+              and what I did.
+            </h2>
           </div>
+          <ol className="md:col-span-8">
+            {experience.map((job) => (
+              <li
+                key={job.role + job.company}
+                className="grid gap-3 border-b border-white/5 py-8 first:pt-0 sm:grid-cols-[9rem_1fr] sm:gap-6"
+              >
+                <p className="text-xs leading-relaxed text-muted">
+                  {job.dates}
+                  <br />
+                  {job.company}
+                </p>
+                <div>
+                  <h3 className="font-semibold">{job.role}</h3>
+                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted">
+                    {job.highlights.map((h) => (
+                      <li key={h} className="flex gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
-        {/* Skills / Why Hire Me */}
-        <section id="skills" className="mx-auto max-w-5xl px-6 py-20">
-          <h2 className="mb-10 text-sm font-semibold uppercase tracking-widest text-accent-2">
-            Skills &amp; Why Hire Me
-          </h2>
-
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-white/10 bg-surface px-4 py-2 text-sm text-foreground transition-colors hover:border-accent/40"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {characteristics.map((c) => (
-              <div
-                key={c.title}
-                className="rounded-2xl border border-white/10 bg-surface p-6 transition-colors hover:border-accent-2/40"
-              >
-                <h3 className="mb-2 font-semibold text-accent-2">{c.title}</h3>
-                <p className="text-sm text-muted">{c.blurb}</p>
-              </div>
-            ))}
+        {/* Skills */}
+        <section id="skills" className="bg-band">
+          <div className="mx-auto grid max-w-5xl gap-12 px-6 py-28 md:grid-cols-12">
+            <div className="md:col-span-4">
+              <Eyebrow>Skills</Eyebrow>
+              <h2 className="text-2xl font-medium leading-snug">
+                Skills &amp; tools
+                <br />
+                I work with.
+              </h2>
+            </div>
+            <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 md:col-span-8">
+              {skillGroups.map((group) => (
+                <div key={group.category}>
+                  <h3 className="mb-4 font-semibold">
+                    {group.category}
+                    <span className="text-accent">.</span>
+                  </h3>
+                  <ul className="space-y-3 text-sm">
+                    {group.items.map((skill) => (
+                      <li key={skill} className="flex items-start gap-3 text-foreground/80">
+                        <span className="mt-2 h-1 w-3 shrink-0 bg-accent/70" />
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Featured Project */}
-        <section id="project" className="mx-auto max-w-5xl px-6 py-20">
-          <h2 className="mb-10 text-sm font-semibold uppercase tracking-widest text-accent-2">
-            Featured Project
-          </h2>
-          <div className="rounded-2xl border border-white/10 bg-surface p-6 transition-colors hover:border-accent/40 sm:p-8">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 className="text-2xl font-semibold">HypeMe</h3>
-              <span className="text-sm text-muted">{project.dates}</span>
-            </div>
-            <p className="mt-3 max-w-2xl text-muted">
+        <section id="project" className="mx-auto grid max-w-5xl gap-12 px-6 py-28 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Eyebrow>Featured Project</Eyebrow>
+            <h2 className="text-2xl font-medium leading-snug">
+              HypeMe<span className="text-accent">.</span>
+            </h2>
+            <p className="mt-2 text-xs text-muted">{project.dates}</p>
+            <p className="mt-6 leading-relaxed text-muted">
               A cross-platform mobile app where users log daily wins and get AI coaching
               that connects each win to their personal goals, in a tone they choose.
             </p>
-            <ul className="mt-4 max-w-3xl list-disc space-y-2 pl-5 text-muted">
+            <ul className="mt-6 space-y-3 text-sm leading-relaxed text-muted">
               {project.highlights.map((h) => (
-                <li key={h}>{h}</li>
+                <li key={h} className="flex gap-3">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                  <span>{h}</span>
+                </li>
               ))}
             </ul>
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
+              <ArrowLink href="/hypeme">Try the Live Demo</ArrowLink>
+              <ArrowLink href="https://github.com/knham1/HypeMe" external>
+                View on GitHub
+              </ArrowLink>
+            </div>
+          </div>
+
+          <a
+            href="/hypeme"
+            className="group block self-start overflow-hidden bg-band md:col-span-7"
+          >
+            <div className="flex items-start justify-between gap-4 p-8">
+              <p className="text-2xl font-medium">HypeMe.</p>
+              <p className="text-right text-sm font-semibold">{project.tech.slice(0, 2).join(", ")}</p>
+            </div>
+            {/* Swap for a project screenshot later */}
+            {/* <Placeholder
+              label="Project screenshot"
+              className="ml-8 aspect-[4/3] origin-bottom-left transition-transform duration-500 group-hover:-rotate-1 group-hover:scale-[1.02]"
+            /> */}
+            <img src="/images/HypeMe_Demo.png" alt="HypeMe Demo" />
+            <div className="flex flex-wrap gap-2 p-8">
               {project.tech.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-background px-3 py-1 text-xs text-muted"
-                >
+                <span key={tag} className="bg-surface px-3 py-1 text-xs text-muted">
                   {tag}
                 </span>
               ))}
             </div>
-            <div className="mt-6 flex flex-wrap gap-4">
-              <a
-                href="/hypeme"
-                className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105"
-              >
-                Try the Live Demo
-              </a>
-              <a
-                href="https://github.com/knham1/HypeMe"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold transition-colors hover:border-white/40"
-              >
-                View on GitHub
-              </a>
-            </div>
-          </div>
+          </a>
         </section>
 
         {/* Contact */}
-        <section id="contact" className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent-2">
-            Contact
-          </h2>
-          <p className="mb-8 text-lg text-muted">
-            Let&apos;s talk — I&apos;m open to new opportunities.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="mailto:knham3@gmail.com"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
-            >
-              Email Me
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kennynham/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold transition-colors hover:border-white/40"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/knham1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold transition-colors hover:border-white/40"
-            >
-              GitHub
-            </a>
+        <section id="contact" className="bg-band">
+          <div className="mx-auto grid max-w-5xl gap-12 px-6 py-28 md:grid-cols-12">
+            <div className="md:col-span-5">
+              <Eyebrow>Contact</Eyebrow>
+              <h2 className="text-2xl font-medium leading-snug">
+                Let's talk<span className="text-accent">.</span>
+              </h2>
+              <p className="mt-6 text-sm leading-relaxed text-muted">
+                I'm open to new opportunities.
+              </p>
+              {/* <div className="mt-10">
+                <ArrowLink href={`mailto:${EMAIL}`}>{EMAIL}</ArrowLink>
+              </div> */}
+            </div>
+            <ul className="md:col-span-7">
+              {[
+                { label: "Email Me", detail: "", href: `mailto:${EMAIL}` },
+                { label: "LinkedIn", detail: "", href: LINKEDIN, external: true },
+                { label: "GitHub", detail: "", href: GITHUB, external: true },
+                { label: "View Resume", detail: "PDF", href: RESUME, download: RESUME_NAME },
+              ].map((row) => (
+                <li key={row.label} className="border-b border-white/5 py-6 first:pt-0">
+                  <a
+                    href={row.href}
+                    download={row.download}
+                    {...(row.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="group flex items-center justify-between gap-4"
+                  >
+                    <span className="font-semibold transition-colors group-hover:text-accent">
+                      {row.label}
+                    </span>
+                    <span className="flex items-center gap-6 text-sm text-muted">
+                      <span className="hidden sm:inline">{row.detail}</span>
+                      <ArrowIcon className="h-4 w-4 text-accent transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-white/5 px-6 py-8 text-center text-sm text-muted">
-        © {new Date().getFullYear()} Kenny Nham. Built with Next.js.
+      <footer className="flex flex-col items-center gap-6 px-6 py-20 text-center">
+        <Logo className="h-14 w-14 text-xl" />
+        <p className="text-sm text-muted">
+          <span className="font-semibold text-foreground">© {new Date().getFullYear()} Kenny Nham.</span>{" "}
+        </p>
+        <SocialLinks />
       </footer>
     </div>
   );
