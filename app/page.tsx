@@ -2,17 +2,17 @@ const characteristics = [
   {
     title: "Full Software Lifecycle Experience",
     blurb:
-      "I've worked the full software development lifecycle. Requirements, design, development, testing, debugging, deployment, and CI/CD automation across full-stack, QA, system integration, and DevOps in Agile environments.",
+      "Experienced across the full software software development lifecycle.",
   },
   {
     title: "Results You Can Measure",
     blurb:
-      "I focus on outcomes, not just output. Cutting delivery times by67% (6 hours to 2), reducing post-release defects by 30%, speeding configuration by 20%, and shortening feature validation by 30%.",
+      "I focus on outcomes, not just output. Cutting CI/CD delivery times by 67%, and reducing post-release defects by 30%",
   },
   {
     title: "Cross-Functional Collaborator",
     blurb:
-      "I've worked closely with product managers, QA engineers, and developers through Agile development, gathering requirements, implementing features, and testing to improve project delivery times by 25%.",
+      "I've worked closely with engineers around the world, from US to Norway, Singapore, and Brazil.",
   },
 ];
 
@@ -328,7 +328,11 @@ export default function Home() {
               <div className="fade-up-delay-1 self-center md:col-span-4 md:pb-24">
                 <Eyebrow>Introduction</Eyebrow>
                 <p className="text-2xl font-medium leading-snug">
-                I've built the features, tested them, wired systems together, automated the releases, and deployed them.
+                I've built the features
+                <br />
+                Tested the products and
+                <br />
+                Deployed solutions.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
                   <ArrowLink href={RESUME} download={RESUME_NAME}>
@@ -347,9 +351,7 @@ export default function Home() {
             <div className="md:col-span-5">
               <Eyebrow>About</Eyebrow>
               <h2 className="text-2xl font-medium leading-snug">
-                Software Engineer,
-                <br />
-                8+ years in the field.
+                From code to production, and everything else in between.
               </h2>
               {/* <div className="mt-10">
                 <ArrowLink href={`mailto:${EMAIL}`}>{EMAIL}</ArrowLink>
